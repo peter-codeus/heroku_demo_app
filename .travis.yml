@@ -1,0 +1,16 @@
+language: java
+
+branches:
+    only:
+        - main
+before_install:
+    - echo "Executing before_install"
+
+jobs:
+    include:
+        - stage: test
+          script: echo "executing test ..."
+        - stage: build
+          script: echo "executing build ..."
+        - stage: deploy
+          script: echo "Deploying app to heroku ..."
